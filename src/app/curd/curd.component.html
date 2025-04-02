@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Angular Reactive Form - CRUD Operations</h2>
+  
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name" placeholder="Enter Name" required>
+      <div *ngIf="userForm.controls['name'].invalid && userForm.controls['name'].touched">
+        Name is required.
+      </div>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter Email" required>
+      <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">
+        Valid email is required.
+      </div>
+  
+      <button type="submit" [disabled]="userForm.invalid">{{ editIndex === null ? 'Add User' : 'Update User' }}</button>
+    </form>
+  
+    <h3>Users List</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button (click)="editUser(i)">Edit</button>
+            <button (click)="deleteUser(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

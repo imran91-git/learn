@@ -1,0 +1,31 @@
+<div class="dashboard">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><a [routerLink]="['/dashboard/curd']">Curd</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/learn']">Learn</a></li> <!-- ✅ Corrected -->
+        <li appHighlight="White"><a [routerLink]="['/dashboard/curd']">Signals</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/learn']">Roles</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/ngrx']">Ngrx</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/rxjs']">Rxjs</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/stand']">standalone</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/learn']">Communication</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/learn']">Life Cycle Hooks</a></li> <!-- ✅ Corrected -->
+        <li><a [routerLink]="['/dashboard/learn']">Angular 19</a></li> <!-- ✅ Corrected -->
+      </ul>
+    </nav>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <h1>Super Meteor Owners</h1>
+      <!-- ✅ Display username -->
+      </header>
+  
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  

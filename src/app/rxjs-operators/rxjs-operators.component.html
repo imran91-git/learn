@@ -1,0 +1,52 @@
+<button (click)="Rxjs()" class="save-btn">
+    Rxjs()Map
+  </button>
+  {{output}}<br>
+  <button (click)="rxjsFilter()" class="save-btn">
+    Rxjs()Filter
+  </button>
+  {{output1}}
+  <div class="form-container"  [appHighlight]="'Yellow'">
+    <h2>Part Management</h2>
+    <form #partForm="ngForm">
+      <div class="form-group">
+        <label for="title">SL No</label>
+        <input type="text" id="title" name="title" [(ngModel)]="title" required />
+      </div>
+  
+      <div class="form-group" >
+        <label for="pNo">Part No</label>
+        <input type="text" id="pNo" name="pNo" [(ngModel)]="first" required />
+      </div>
+  
+      <button *ngIf="saveupdate==='ADD'" (click)="addpart(title, first)">
+        {{ saveupdate }}
+      </button>
+      
+      <button *ngIf="saveupdate==='Update'"  [disabled]="!first" (click)="update(title, first)">{{saveupdate}}</button>
+    </form>
+  </div>
+  
+  <table *ngIf="listparts.length>0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Part No</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lists of listparts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ lists.title }}</td>
+        <td>{{ lists.first }}</td>
+        <td>
+          <button (click)="edit(i)">Edit</button>
+          <button (click)="delete(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  

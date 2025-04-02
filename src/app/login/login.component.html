@@ -1,0 +1,26 @@
+<div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <h2>Login</h2>
+  
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required />
+        <small *ngIf="loginForm.form.controls['email']?.invalid && loginForm.form.controls['email']?.touched">
+          Email is required.
+        </small>
+      </div>
+  
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required />
+        <small *ngIf="loginForm.form.controls['password']?.invalid && loginForm.form.controls['password']?.touched">
+          Password is required.
+        </small>
+      </div>
+  
+      <button type="submit" [routerLink]="['/dashboard']" [disabled]="loginForm.invalid">Login</button>
+  
+      <p *ngIf="message" class="message">{{ message }}</p>
+    </form>
+  </div>
+  
