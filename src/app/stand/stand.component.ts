@@ -13,5 +13,8 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrl: './stand.component.scss'
 })
 export class StandComponent {
+  constructor(){
+    
+  }
 
 }
