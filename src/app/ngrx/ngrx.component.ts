@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { CommonModule } from '@angular/common';
+import { Store, provideStore } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { decrement,increment } from '../counter.actions';
+import { increment, decrement } from '../counter.actions';
+import { counterReducer } from '../counter.reducer';
+
 @Component({
   selector: 'app-ngrx',
+  standalone: true, // ✅ Standalone component
+  imports: [CommonModule], // ✅ Correct fix
   templateUrl: './ngrx.component.html',
-  styleUrls: ['./ngrx.component.scss'] ,
-  providers:[],
-  
+  styleUrls: ['./ngrx.component.scss']
 })
 export class NgrxComponent {
   count$: Observable<number>;
 
   constructor(private store: Store<{ count: number }>) {
-    this.count$ = this.store.select('count'); // ✅ Select count from store
+    this.count$ = this.store.select('count');
   }
 
   increment() {

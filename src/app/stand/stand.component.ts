@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule],
+    CommonModule,],
   templateUrl: './stand.component.html',
   styleUrl: './stand.component.scss'
 })
