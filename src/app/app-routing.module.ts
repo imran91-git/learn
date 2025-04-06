@@ -8,6 +8,7 @@ import { AuthGuard } from './auth.guard';
 import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
 import { NgrxComponent } from './ngrx/ngrx.component';
 import { StandComponent } from './stand/stand.component';
+import { Angular19Component } from './angular19/angular19.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirect empty path to login
@@ -20,7 +21,8 @@ export const routes: Routes = [
     { path: 'learn', component: LearnComponent },
     {path:'rxjs',component:RxjsOperatorsComponent},
     {path:'ngrx',component:NgrxComponent},
-    {path:'stand',component:StandComponent}
+    {path:'stand',component:StandComponent},
+    {path:'Angular19',component:Angular19Component}
     
   ]} 
   // Learn component route
