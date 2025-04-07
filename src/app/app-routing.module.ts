@@ -9,12 +9,15 @@ import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.componen
 import { NgrxComponent } from './ngrx/ngrx.component';
 import { StandComponent } from './stand/stand.component';
 import { Angular19Component } from './angular19/angular19.component';
+import { LifecyclehooksComponent } from './lifecyclehooks/lifecyclehooks.component';
+import { JavascriptcompilerComponent } from './javascriptcompiler/javascriptcompiler.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirect empty path to login
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', 
   component: DashboardComponent,
+ 
   canActivate: [AuthGuard],
   children: [  // 👈 Define child routes inside Dashboard
     { path: 'curd', component: CrudComponent },
@@ -22,9 +25,11 @@ export const routes: Routes = [
     {path:'rxjs',component:RxjsOperatorsComponent},
     {path:'ngrx',component:NgrxComponent},
     {path:'stand',component:StandComponent},
-    {path:'Angular19',component:Angular19Component}
+    {path:'Angular19',component:Angular19Component},
+    {path:'hooks',component:LifecyclehooksComponent}
     
   ]} 
+  , {path:'javascript',component:JavascriptcompilerComponent},
   // Learn component route
 ];
 
