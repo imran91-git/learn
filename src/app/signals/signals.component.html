@@ -1,0 +1,14 @@
+<p>signals works!</p>
+<div><button (click)="signals()">Update Signal</button></div>
+<br>
+<div><button (click)="decrement()">Writable Signal</button></div>
+<br>
+<div><button (click)="reset()">Rest by set Signal</button></div>
+Writable signal{{count()}}
+<div><button (click)="spreadoperatorexample()">SpreadOperator</button></div>
+<table>
+    <h3 [innerHTML]="message"></h3> 
+    <tr *ngFor="let item of newop">
+      <td>{{ item }}</td>
+    </tr>
+  </table>

@@ -11,6 +11,7 @@ import { StandComponent } from './stand/stand.component';
 import { Angular19Component } from './angular19/angular19.component';
 import { LifecyclehooksComponent } from './lifecyclehooks/lifecyclehooks.component';
 import { JavascriptcompilerComponent } from './javascriptcompiler/javascriptcompiler.component';
+import { SignalsComponent } from './signals/signals.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirect empty path to login
@@ -26,7 +27,8 @@ export const routes: Routes = [
     {path:'ngrx',component:NgrxComponent},
     {path:'stand',component:StandComponent},
     {path:'Angular19',component:Angular19Component},
-    {path:'hooks',component:LifecyclehooksComponent}
+    {path:'hooks',component:LifecyclehooksComponent},
+    {path:"signals",component:SignalsComponent}
     
   ]} 
   , {path:'javascript',component:JavascriptcompilerComponent},
