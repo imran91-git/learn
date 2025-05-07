@@ -11,11 +11,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class SignalsComponent implements OnInit {
   count = signal(0);
+  count2=signal(5);
  
   spreadOperator: WritableSignal<string[]> = signal(['1', '2']);
   ngOnInit(): void {
     this.count.update(value => value + 1);
     this.spreadOperator();
+    this.count2.update(val => val*30);
   }
 
 

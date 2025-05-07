@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +20,10 @@ export class SharedService {
   setUsername(name: string) {
     this.usernameSource.next(name); // Update username
   }
+  private dataSource = new Subject<string>();
+  data$ = this.dataSource.asObservable();
 
+  sendDatatoSibling(data: string) {
+    this.dataSource.next(data);
+  }
 }

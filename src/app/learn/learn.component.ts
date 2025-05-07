@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SharedService } from '../shared.service';
 //import { ApicallsService } from '../apicalls.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class LearnComponent implements OnInit {
+  siblingdata=''
   myList: { name: string; email: string }[] = [];
   email: any;
   name: any;
@@ -21,10 +23,13 @@ export class LearnComponent implements OnInit {
   selectedFile!: File;
   imageUrl: string | null = null;
   
-  constructor() {}
+  constructor(private shared:SharedService) {}
   ngOnInit(): void {
     this.save = 'Save';
     this.imageUrl = localStorage.getItem('savedImage');
+    this.shared.data$.subscribe(data=>
+      console.log('Received in B:', data)
+    )
   //  this.fetchUsers();
   }
   // fetchUsers() {
